@@ -1,5 +1,6 @@
 require 'rails_helper'
-
+require 'simplecov'
+SimpleCov.start
 
 RSpec.describe 'Users::Services::Create', type: :integration do
   describe '.run' do
@@ -11,7 +12,7 @@ RSpec.describe 'Users::Services::Create', type: :integration do
       }
     end
 
-    context 'witth valid params' do
+    context 'with valid params' do
       it 'should create user' do
         status, user = Users::Services::Create.run(@params)
 
