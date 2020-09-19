@@ -1,3 +1,5 @@
+require 'jwt'
+
 module Users
   module Services
     class Create
@@ -5,9 +7,9 @@ module Users
         user = User.new(params)
 
         if user.save
-          return :created, user
+          return :created, user, user.generate_jwt
         else
-          return :failed, user
+          return :failed, user, ''
         end
       end
     end
