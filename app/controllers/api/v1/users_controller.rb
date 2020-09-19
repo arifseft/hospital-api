@@ -1,15 +1,14 @@
 module Api
   module V1
     class UsersController < Api::V1::BaseController
-      # skip_before_action :verify_authenticity_token, only: [:create]
-
       def create
-        status, @user, @token = Users::Services::Create.run(user_params)
+        status, @user = Users::Services::Create.run(user_params)
 
         if status != :created
           render json: {message: generate_message(@user)}, status: :unprocessable_entity
         else
-          render json: {data: @user, token: @token}, status: :ok
+
+          _, @user_token = UserTokens::Services::Create.run(@user)
         end
       end
 

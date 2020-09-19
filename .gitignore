@@ -32,4 +32,3 @@
 /config/master.key
 
 /coverage/*
-/db/*.sqlite3

@@ -1,6 +1,4 @@
 require 'rails_helper'
-require 'simplecov'
-SimpleCov.start
 
 RSpec.describe 'Users::Services::Create', type: :integration do
   describe '.run' do
