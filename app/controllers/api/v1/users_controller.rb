@@ -1,6 +1,8 @@
 module Api
   module V1
     class UsersController < Api::V1::BaseController
+      skip_before_action :authenticate_user, only: [:create]
+
       def create
         status, @user = Users::Services::Create.run(user_params)
 
@@ -15,7 +17,8 @@ module Api
       private
 
       def user_params
-        params.permit(:full_name, :email, :password)
+        params[:gender] = params[:gender].downcase if params[:gender].present?
+        params.permit(:full_name, :email, :password, :gender, :birthday, :is_doctor)
       end
 
       def generate_message(user)

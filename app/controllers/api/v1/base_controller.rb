@@ -2,6 +2,7 @@ module Api
   module V1
     class BaseController < ApplicationController
       before_action { request.format = :json }
+      before_action :authenticate_user
 
       def authenticate_user
         user_token = UserToken.find_by(token: request.headers['User-Access-Token'])
