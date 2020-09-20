@@ -323,7 +323,6 @@ Header:
 Params:
 |params |type |required/optional|
 |------------|--------|-----------------|
-|user_id |integer |required |
 |doctor_id |integer |required |
 |schedule_id |integer |required |
 |payment_type|string |optional |
@@ -336,7 +335,6 @@ Example request:
 curl --request POST \
   --url http://localhost:3000/api/v1/orders \
   --header 'user-access-token: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6bnVsbCwiZXhwIjoxNjAzMTg0MzU0fQ.ByMm-tW1EA_yU-e20R-4RTwLljZAwr24IDc-en_-lmQ' \
-  --form user_id=6 \
   --form doctor_id=2 \
   --form schedule_id=12 \
   --form payment_type=personal \
@@ -409,7 +407,7 @@ Example response:
 
 ### List Appointments (for doctor)
 
-Doctor can see appointments with his patient through this endpoint. Endpoint: `http://localhost:3000/api/v1/doctors/{doctor_id}/appointments`.
+Doctor can see appointments with his patients whose order status has been `paid` through this endpoint. Endpoint: `http://localhost:3000/api/v1/doctors/{doctor_id}/appointments`.
 
 Params:
 |params |type |required/optional|

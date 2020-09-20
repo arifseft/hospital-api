@@ -28,7 +28,6 @@ RSpec.describe 'Api::V1::OrdersController', type: :request do
 
         params = {
           doctor_id: doctor.id,
-          user_id: user.id,
           schedule_id: schedule.id,
           payment_type: 'personal',
           notes: '-'
@@ -80,7 +79,6 @@ RSpec.describe 'Api::V1::OrdersController', type: :request do
 
         params = {
           doctor_id: doctor.id,
-          user_id: user.id,
           schedule_id: schedule.id,
           payment_type: 'personal',
           notes: '-'
