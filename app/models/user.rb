@@ -27,6 +27,6 @@ class User < ApplicationRecord
 
   def age
     return nil if birthday.nil?
-    age = Date.today.year - birthday.year
+    return Date.today.year - birthday.year
   end
 end
