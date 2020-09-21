@@ -17,7 +17,9 @@ rspec
 
 ## Endpoint
 
-### Postman Collection `https://www.getpostman.com/collections/a87bb4cf41b10ec2618a`
+### Postman Collection
+
+You can get Postman Collection with this link: `https://www.getpostman.com/collections/a87bb4cf41b10ec2618a`
 
 ### Register
 
