@@ -17,6 +17,8 @@ rspec
 
 ## Endpoint
 
+### Postman Collection `https://www.getpostman.com/collections/a87bb4cf41b10ec2618a`
+
 ### Register
 
 You can register as a user with this endpoint: `http://localhost:3000/api/v1/register`.
